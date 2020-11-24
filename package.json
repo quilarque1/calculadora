@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/quilarque1/calculadora/issues"
   },
-  "homepage": "https://github.com/quilarque1/calculadora#readme"
+  "homepage": "https://github.com/quilarque1/calculadora#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
