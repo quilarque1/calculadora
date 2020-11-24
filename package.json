@@ -1,0 +1,20 @@
+{
+  "name": "calculadora",
+  "version": "1.0.0",
+  "description": "Artefacto encargado de realizar operaciones matemáticas a partir de una entrada especifica",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quilarque1/calculadora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quilarque1/calculadora/issues"
+  },
+  "homepage": "https://github.com/quilarque1/calculadora#readme"
+}
