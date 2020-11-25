@@ -1,13 +1,15 @@
-
 const express = require('express');
 const parser = require('body-parser');
 
-let api = express();
+const api = express();
 api.use(parser.json());
 
-api.get('/health', function (req, res) {
-	res.send('calculadora is up');
-});
+//routes
+api.use(require('./routes/index'));
 
 const puerto = 3000;
-api.listen(puerto);
+api.listen(puerto, function () {
+	console.log('Calculadora is running on port', puerto);
+});
+
+module.exports = api;
