@@ -3,6 +3,6 @@ services:
   app:
     build: .
     volumes:
-    - ./:/app
+    - "./src/:/src/"
     ports:
     - "3000:3000"

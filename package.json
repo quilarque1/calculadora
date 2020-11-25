@@ -2,7 +2,7 @@
   "name": "calculadora",
   "version": "1.0.0",
   "description": "Artefacto encargado de realizar operaciones matemáticas a partir de una entrada especifica",
-  "main": "node app.js",
+  "main": "node src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
