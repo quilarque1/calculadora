@@ -2,7 +2,9 @@ const express = require('express');
 const parser = require('body-parser');
 
 const api = express();
+
 api.use(parser.json());
+api.use(parser.urlencoded({ extended: false }));
 
 //routes
 api.use(require('./routes/index'));
