@@ -1,4 +1,4 @@
-
+//require('dotenv').config();
 const axios = require('axios');
 
 let obtenerOperaciones = (datos) => {
@@ -11,7 +11,7 @@ let obtenerOperacionSuma = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://host.docker.internal:4000/suma/' + operacion)
+		let response = await axios.get(process.env.API_SUMA + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -30,7 +30,7 @@ let obtenerOperacionResta = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://host.docker.internal:5000/resta/' + operacion)
+		let response = await axios.get(process.env.API_RESTA + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -49,7 +49,7 @@ let obtenerOperacionMultiplicar = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://host.docker.internal:6000/multiplicacion/' + operacion)
+		let response = await axios.get(process.env.API_MULTIPLICAR + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -68,7 +68,7 @@ let obtenerOperacionDividir = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://host.docker.internal:7000/division?operacion=' + operacion)
+		let response = await axios.get(process.env.API_DIVIDIR + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const parser = require('body-parser');
 
@@ -9,7 +10,7 @@ api.use(parser.urlencoded({ extended: false }));
 //routes
 api.use(require('./routes/index'));
 
-const puerto = 3000;
+const puerto = process.env.SERVER_PORT || 3000;
 api.listen(puerto, function () {
 	console.log('Calculadora is running on port', puerto);
 });
