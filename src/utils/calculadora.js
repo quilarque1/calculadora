@@ -11,7 +11,7 @@ let obtenerOperacionSuma = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://localhost:4000/suma/' + operacion)
+		let response = await axios.get('http://host.docker.internal:4000/suma/' + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -30,7 +30,7 @@ let obtenerOperacionResta = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://localhost:5000/resta/' + operacion)
+		let response = await axios.get('http://host.docker.internal:5000/resta/' + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -49,7 +49,7 @@ let obtenerOperacionMultiplicar = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://localhost:6000/multiplicacion/' + operacion)
+		let response = await axios.get('http://host.docker.internal:6000/multiplicacion/' + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
@@ -68,7 +68,7 @@ let obtenerOperacionDividir = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
-		let response = await axios.get('http://localhost:7000/division?operacion=' + operacion)
+		let response = await axios.get('http://host.docker.internal:7000/division?operacion=' + operacion)
 			.then((response ) => {
 
 				if (response.status === 200) {
