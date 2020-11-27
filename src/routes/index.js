@@ -6,7 +6,7 @@ router.get('/health', (req, res) => {
 	res.json({ status: "Calculadora is Up!!" });
 });
 
-router.post('/calcular', (req, res, next) => {
+router.post('/calcular', async (req, res, next) => {
 
 	try {
 		const calculadoraService = new CalculadoraService();
@@ -20,7 +20,7 @@ router.post('/calcular', (req, res, next) => {
 			console.log('Operacion a resolver: ', req.body);
 
 			res.status(200).json({
-				ouput: calculadoraService.getOperaciones(req.body.calcular)
+				ouput: await calculadoraService.getOperaciones(req.body.calcular)
 			});
 		}
 
