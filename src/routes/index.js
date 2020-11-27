@@ -18,9 +18,10 @@ router.post('/calcular', async (req, res, next) => {
 			});
 		} else {
 			console.log('Operacion a resolver: ', req.body);
-
+			let respuesta = await calculadoraService.getOperaciones(req.body.calcular);
+			console.log(respuesta)
 			res.status(200).json({
-				ouput: await calculadoraService.getOperaciones(req.body.calcular)
+				output: respuesta
 			});
 		}
 

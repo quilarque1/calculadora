@@ -7,7 +7,7 @@ let obtenerOperaciones = (datos) => {
 	return listaOperaciones;
 }
 
-let obtenerOperacion = async (operacion) => {
+let obtenerOperacionSuma = async (operacion) => {
 
 	return new Promise(async (resolve, reject) => {
 
@@ -26,4 +26,61 @@ let obtenerOperacion = async (operacion) => {
 	});
 }
 
-module.exports = { obtenerOperaciones, obtenerOperacion };
+let obtenerOperacionResta = async (operacion) => {
+
+	return new Promise(async (resolve, reject) => {
+
+		let response = await axios.get('http://localhost:5000/resta/' + operacion)
+			.then((response ) => {
+
+				if (response.status === 200) {
+					console.log('Consulta a api de resta exitosa: ', response.data);
+					return response.data.resta.resultado;
+				}
+			}).catch((e) => {
+				console.log('Error consultando api de resta: ', e.message);
+				reject(e.message);
+			})
+		resolve(response);
+	});
+}
+
+let obtenerOperacionMultiplicar = async (operacion) => {
+
+	return new Promise(async (resolve, reject) => {
+
+		let response = await axios.get('http://localhost:6000/multiplicacion/' + operacion)
+			.then((response ) => {
+
+				if (response.status === 200) {
+					console.log('Consulta a api de multiplicacion exitosa: ', response.data);
+					return response.data.multiplicacion.resultado;
+				}
+			}).catch((e) => {
+				console.log('Error consultando api de multiplicacion: ', e.message);
+				reject(e.message);
+			})
+		resolve(response);
+	});
+}
+
+let obtenerOperacionDividir = async (operacion) => {
+
+	return new Promise(async (resolve, reject) => {
+
+		let response = await axios.get('http://localhost:7000/division?operacion=' + operacion)
+			.then((response ) => {
+
+				if (response.status === 200) {
+					console.log('Consulta a api de division exitosa: ', response.data);
+					return response.data.division.resultado;
+				}
+			}).catch((e) => {
+				console.log('Error consultando api de division: ', e.message);
+				reject(e.message);
+			})
+		resolve(response);
+	});
+}
+
+module.exports = { obtenerOperaciones, obtenerOperacionSuma, obtenerOperacionResta, obtenerOperacionMultiplicar, obtenerOperacionDividir };
